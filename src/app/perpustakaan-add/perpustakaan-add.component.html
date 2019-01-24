@@ -1,0 +1,53 @@
+<h4>pinjam buku</h4>
+
+<form  [formGroup]="perpustakaanForm" (ngSubmit)="kirim()">
+	<div class = "form-group row">
+		<label class = "col-sm-3 form-control-label" for="isbn">ISBN: </label>
+			<div class ="col-sm-6">
+				<input type = "text" [formControlName]="'isbn'" class="form-control">
+				<span *ngIf="!perpustakaanForm.get('isbn').valid && perpustakaanForm.get('isbn').
+				touched" class = 'help-block' >
+					<span *ngIf ="perpustakaanForm.get('isbn').errors['required']">
+						Wajib Diisi
+					</span>
+					<span *ngIf ="perpustakaanForm.get('isbn').errors['blank']">
+							Tidak Boleh Kosong atuh
+					</span>
+				</span>
+		</div>	
+  </div>
+  
+  <form  [formGroup]="perpustakaanForm" (ngSubmit)="kirim()">
+	<div class = "form-group row">
+		<label class = "col-sm-3 form-control-label" for="namaBuku">Nama Buku: </label>
+			<div class ="col-sm-6">
+				<input type = "text" [formControlName]="'namaBuku'" class="form-control">
+				<span *ngIf="!perpustakaanForm.get('namaBuku').valid && perpustakaanForm.get('namaBuku').
+				touched" class = 'help-block' >
+					<span *ngIf ="perpustakaanForm.get('namaBuku').errors['required']">
+						Wajib Diisi
+					</span>
+					<span *ngIf ="perpustakaanForm.get('namaBuku').errors['blank']">
+							Tidak Boleh Kosong atuh
+					</span>
+				</span>
+		</div>	
+  </div>
+  
+  <form  [formGroup]="perpustakaanForm" (ngSubmit)="kirim()">
+	<div class = "form-group row">
+		<label class = "col-sm-3 form-control-label" for="qty">QTY: </label>
+			<div class ="col-sm-6">
+				<input type = "text" [formControlName]="'qty'" class="form-control">
+				<span *ngIf="!perpustakaanForm.get('namaBuku').valid && perpustakaanForm.get('qty').
+				touched" class = 'help-block' >
+					<span *ngIf ="perpustakaanForm.get('qty').errors['required']">
+						Wajib Diisi
+					</span>
+					<span *ngIf ="perpustakaanForm.get('qty').errors['blank']">
+							Tidak Boleh Kosong atuh
+					</span>
+				</span>
+		</div>	
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="tambahPerpustakaan()">Pilih</button>
